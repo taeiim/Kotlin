@@ -13,7 +13,6 @@ import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
-import kotlin.concurrent.timerTask
 
 class MainActivity : AppCompatActivity() {
 
@@ -56,19 +55,18 @@ class MainActivity : AppCompatActivity() {
             activePlayer = 2
             num++
 
-            val timer = Timer()
-            timer.schedule(timerTask { println("timer 1000") }, 1000)
-            autoPlay()
+            checkWinner(num)
+//            autoPlay()
         } else if (activePlayer ==2){
             btnSelected.text = "X"
             btnSelected.setBackgroundColor(Color.BLUE)
             player2.add(cellID)
             activePlayer = 1
             num++
+            checkWinner(num)
         }
 
         btnSelected.isEnabled = false
-        checkWinner(num)
     }
 
     fun checkWinner(num:Int){
@@ -152,11 +150,10 @@ class MainActivity : AppCompatActivity() {
                 res = 1
                 setDialog(res)
                 Toast.makeText(this," Player 1  win the game", Toast.LENGTH_LONG).show()
-            }else{
+            }else if(winner == 2){
                 res = 2
                 setDialog(res)
                 Toast.makeText(this," Player 2  win the game", Toast.LENGTH_LONG).show()
-
             }
         } else if(num==9 && winner==-1){
             res = 3
@@ -166,6 +163,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setDialog(res:Int){
+
         var dialogBuilder = AlertDialog.Builder(this@MainActivity)
         dialogBuilder.setTitle("게임 종료")
 
@@ -179,6 +177,7 @@ class MainActivity : AppCompatActivity() {
 
         dialogBuilder.setPositiveButton("확인"){
             dialogInterface, i -> Log.d("onclick","oh!!")
+            recreate()
         }
         dialogBuilder.create().show()
 
@@ -213,7 +212,7 @@ class MainActivity : AppCompatActivity() {
             6-> btnSelected=btn6
             7-> btnSelected=btn7
             8-> btnSelected=btn8
-            9-> btnSelected=btn9   
+            9-> btnSelected=btn9
             else->{
                 btnSelected=btn1
             }
