@@ -10,13 +10,19 @@ import android.widget.TextView
  * Created by parktaeim on 2017. 11. 29..
  */
 
-class TodoRecyclerAdapter(val list:ArrayList<TodoItem>) : RecyclerView.Adapter<TodoRecyclerAdapter.ViewHolder>(){
+class TodoRecyclerAdapter(val items:ArrayList<TodoItem>) : RecyclerView.Adapter<TodoRecyclerAdapter.ViewHolder>(){
     override fun getItemCount(): Int {
-        return list.size
+        return items.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindView(list[position])
+        holder.bindView(items[position])
+
+        // longClick하면 삭제
+        holder.itemView.setOnClickListener {
+            items.removeAt(position)
+            notifyDataSetChanged()
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,10 +38,7 @@ class TodoRecyclerAdapter(val list:ArrayList<TodoItem>) : RecyclerView.Adapter<T
 
             todoTitleTextView.text = todoData.title
             todoDescTextView.text = todoData.desc
-//
-//            itemView.setOnLongClickListener {
-//                //delete
-//            }
+
         }
 
     }
