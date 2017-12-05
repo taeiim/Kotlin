@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.parktaeim.todolist.MainActivity">
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,10 +15,10 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/icon_finishTodo"
+                android:id="@+id/icon_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_check"
+                android:src="@drawable/icon_back"
                 android:layout_alignParentLeft="true"/>
 
             <TextView
@@ -33,21 +30,12 @@
                 android:textStyle="bold"
                 android:layout_centerInParent="true"/>
 
-            <ImageView
-                android:id="@+id/icon_addTodo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_plus"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"/>
 
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/todoRecyclerView"
+        android:id="@+id/finishTodoRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
-
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 </LinearLayout>

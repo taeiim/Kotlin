@@ -1,6 +1,7 @@
 package com.example.parktaeim.todolist
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -10,9 +11,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_add_todo.*
 import kotlinx.android.synthetic.main.dialog_add_todo.view.*
@@ -64,17 +63,20 @@ class MainActivity : AppCompatActivity() {
 
                 // arrayList에 추가
                 items.add(TodoItem(todoTitle,todoDesc))
-                adapter.notifyDataSetChanged()
+//                adapter.notifyDataSetChanged()
 
                 dialog.cancel()
             }
+        }
 
-
+        icon_finishTodo.setOnClickListener {
+            val intent = Intent(this,FinishTodoActivity::class.java)
+            startActivity(intent)
 
         }
 
 
-    }
 
+    }
 
 }

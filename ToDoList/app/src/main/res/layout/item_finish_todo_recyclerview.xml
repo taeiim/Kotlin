@@ -21,7 +21,7 @@
             android:padding="20dp">
 
             <TextView
-                android:id="@+id/todoTitleTextView"
+                android:id="@+id/finish_todoTitleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="한국사 답자 일지 쓰기"
@@ -30,31 +30,14 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/todoDescTextView"
+                android:id="@+id/finish_todoDescTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/todoTitleTextView"
+                android:layout_below="@id/finish_todoTitleTextView"
                 android:text="수행평가 10점 빨리 해놓기~!"
                 android:textSize="15dp"
                 android:layout_marginTop="5dp"
                 android:textColor="#444444"/>
-
-            <!--<RadioButton-->
-                <!--android:id="@+id/todoRadioBtn"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_alignParentRight="true"-->
-                <!--android:layout_centerVertical="true"/>-->
-
-            <Button
-                android:id="@+id/finishBtn"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:background="@color/colorAccent"
-                android:text="완료"
-                android:textColor="#FFFFFF"/>
 
         </RelativeLayout>
 
