@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_galaxy"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/astroImg"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:src="@drawable/img_astro"
+            android:layout_alignParentRight="true"
+            android:layout_margin="30dp"/>
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="140dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/img_logo" />
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:text="My name is taeim. Yeah~~ Happy~~"
+            android:textStyle="italic"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="150dp"/>
+
+        <EditText
+            android:id="@+id/idEditText"
+            android:layout_below="@+id/TextView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_mail"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/edittext_back"
+            android:hint="email@2mail.com"
+            android:textColorHint="#FFFFFF"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF"/>
+
+        <EditText
+            android:id="@+id/pwEditText"
+            android:layout_below="@+id/idEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_password"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/edittext_back"
+            android:hint="Password"
+            android:textColorHint="#FFFFFF"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF"
+            android:drawablePadding="2dp"
+            android:paddingLeft="10dp"
+            android:inputType="textPassword"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_margin="20dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_solid"
+            android:text="Login"
+            android:textColor="#FFFFFF"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:src="@drawable/img_rocket"/>
+    </RelativeLayout>
+</RelativeLayout>
